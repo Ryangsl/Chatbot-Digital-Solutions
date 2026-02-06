@@ -24,7 +24,8 @@ const instrucoesTV = {
       "📺 *Samsung*\n\n" +
       "1️⃣ Acesse a loja de aplicativos\n" +
       "2️⃣ Busque por *Playsim*\n" +
-      "3️⃣ Instale o aplicativo",
+      "3️⃣ Instale o aplicativo" +
+      "4️⃣ Abra o aplicativo e envie um print do *MAC e Device Key*",
     imagem: "C:\Users\A0120043\Desktop\Projetos\Chatbot-Digital-Solutions\playsim.icon.png",
   },
   "2": {
@@ -32,7 +33,8 @@ const instrucoesTV = {
     mensagem:
       "1️⃣ Acesse a loja de aplicativos\n" +
       "2️⃣ Busque por *Playsim*\n" +
-      "3️⃣ Instale o aplicativo",
+      "3️⃣ Instale o aplicativo" +
+      "4️⃣ Abra o aplicativo e envie um print do *MAC e Device Key*",
     imagem: "C:\Users\A0120043\Desktop\Projetos\Chatbot-Digital-Solutions\playsim.icon.png",
   },
   "3": {
@@ -54,7 +56,29 @@ const instrucoesTV = {
       "3️⃣ Instale o aplicativo\n"+
       "4️⃣ Abra o aplicativo e insira o código *XXXXX*",
     imagem: "C:\Users\A0120043\Desktop\Projetos\Chatbot-Digital-Solutions\downloader.icon.png",
-      
+  },
+  "5": {
+    mensagem:
+    "🖥️ *Computador*\n\n" +
+    "1️⃣ Abra o navegador\n" +
+    "2️⃣ Acesse o Link *XXXXXX*\n",
+  },
+  "5":{
+    mensagem:
+    "📱*Android*\n\n"+
+    "1️⃣ Acesse a loja de aplicativos\n" +
+    "2️⃣ Busque por *Downloader*\n" +
+    "3️⃣ Instale o aplicativo\n"+
+    "4️⃣ Abra o aplicativo e insira o código *XXXXX*",
+  imagem: "C:\Users\A0120043\Desktop\Projetos\Chatbot-Digital-Solutions\downloader.icon.png", 
+  },
+  "6":{
+    mensagem:
+    "📱*Iphone*\n\n" +
+    "1️⃣ Acesse a loja de aplicativos\n" +
+    "2️⃣ Busque por *Smarters Player Lite*\n" +
+    "3️⃣ Instale o aplicativo\n"+
+    "4️⃣ Abra o aplicativo e aguarde o atendimento",
   }
 };
 
