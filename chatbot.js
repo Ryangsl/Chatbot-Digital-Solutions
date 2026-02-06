@@ -23,26 +23,39 @@ const instrucoesTV = {
     mensagem:
       "📺 *Samsung*\n\n" +
       "1️⃣ Acesse a loja de aplicativos\n" +
-      "2️⃣ Busque por *IPTV App*\n" +
+      "2️⃣ Busque por *Playsim*\n" +
       "3️⃣ Instale o aplicativo",
-    imagem: "./imagens/app.png",
+    imagem: "C:\Users\A0120043\Desktop\Projetos\Chatbot-Digital-Solutions\playsim.icon.png",
   },
   "2": {
     nome: "LG",
     mensagem:
-      "📺 *LG*\n\n" +
-      "Baixe o aplicativo pelo link abaixo:",
-    link: "https://exemplo.com/lg",
-    imagem: "./imagens/app.png",
+      "1️⃣ Acesse a loja de aplicativos\n" +
+      "2️⃣ Busque por *Playsim*\n" +
+      "3️⃣ Instale o aplicativo",
+    imagem: "C:\Users\A0120043\Desktop\Projetos\Chatbot-Digital-Solutions\playsim.icon.png",
   },
   "3": {
     nome: "TCL",
     mensagem:
       "📺 *TCL*\n\n" +
-      "Acesse pelo navegador da TV:",
-    link: "https://exemplo.com/tcl",
-    imagem: "./imagens/app.png",
+      "1️⃣ Acesse a loja de aplicativos\n" +
+      "2️⃣ Busque por *Downloader*\n" +
+      "3️⃣ Instale o aplicativo\n"+
+      "4️⃣ Abra o aplicativo e insira o código *XXXXX*",
+    imagem: "C:\Users\A0120043\Desktop\Projetos\Chatbot-Digital-Solutions\downloader.icon.png",
   },
+  "4": {
+    nome: "TV BOX/ROKU",
+    mensagem:
+      "📺 *TV BOX ou ROKU\n\n" +
+      "1️⃣ Acesse a loja de aplicativos\n" +
+      "2️⃣ Busque por *Downloader*\n" +
+      "3️⃣ Instale o aplicativo\n"+
+      "4️⃣ Abra o aplicativo e insira o código *XXXXX*",
+    imagem: "C:\Users\A0120043\Desktop\Projetos\Chatbot-Digital-Solutions\downloader.icon.png",
+      
+  }
 };
 
 // ===============================
@@ -92,6 +105,12 @@ async function processarMenu(opcao, msg, chat) {
           "*1️⃣ - Samsung*\n" +
           "*2️⃣ - LG*\n" +
           "*3️⃣ - TCL*\n\n" +
+          "*4️⃣ - TV BOX/ROKU*\n\n" +
+          "*5️⃣ - Computador*\n\n" +
+          "*6️⃣ - Celular Android*\n\n" +
+          "*7️⃣ - Celular Iphone*\n\n" +
+
+          
           "Digite o número do modelo."
       );
 
