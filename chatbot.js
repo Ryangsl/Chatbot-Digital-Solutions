@@ -1,3 +1,4 @@
+const NUMERO_ADMIN = "XXXXXXXXXXX@c.us";
 const qrcode = require("qrcode-terminal");
 const { Client, MessageMedia, LocalAuth } = require("whatsapp-web.js");
 
@@ -13,7 +14,6 @@ const client = new Client({
 // 🔐 CONTROLE DE ESTADO
 // ===============================
 const estados = new Map();
-
 // ===============================
 // 📺 INSTRUÇÕES POR TV
 // ===============================
@@ -179,8 +179,66 @@ client.on("message", async (msg) => {
     if (chat.isGroup) return;
 
     const texto = msg.body?.trim().toLowerCase() || "";
+
+    // INTENÇÃO DIRETA DE TESTE
+    if(texto.includes("teste")) {
+
+      await typing(chat);
+
+      await msg.reply(
+        "🎉Perfeito! Vamos iniciar seu teste grátis. \n\n" +
+        "📺 Selecione o modelo do seu dispositivo:\n\n" +
+        "*1️⃣ - Samsung*\n" +
+        "*2️⃣ - LG*\n" +
+        "*3️⃣ - TCL*\n\n" +
+        "*4️⃣ - TV BOX/ROKU*\n\n" +
+        "*5️⃣ - Computador*\n\n" +
+        "*6️⃣ - Celular Android*\n\n" +
+        "*7️⃣ - Celular Iphone*\n\n" +
+        "Digite o número do modelo."
+      );
+
+      estados.set(msg.from, "escolhendo_tv");
+      return;
+    }
+
     const estadoAtual = estados.get(msg.from);
 
+    // REATIVAR BOT
+    if (texto === "!bot") {
+      estados.set(msg.from, "menu_principal");
+      await msg.reply("🤖Atendimento automático reativado.");
+      return;
+    }
+
+    // 👨‍💻BLOQUEIO SE ESTIVER EM ATENDIMENTO HUMANO
+    if (estadoAtual ==="atendimento_humano") {
+      return; // encerramento do bot
+    }
+
+    // 🔄️TRANSFERIR PARA HUMANO
+    if (texto === "atendente") {
+
+      await typing(chat);
+
+      await msg.reply(
+        "👨‍💻 Você foi transferido para o nosso atendimento humano.\n\n" +
+        "Em instantes iremos te responder."
+      );
+
+      estados.set(msg.from, "atendimento_humano");
+      console.log("🔔 Atendimento humano iniciado para:", msg.from);
+
+      await client.sendMessage(
+        NUMERO_ADMIN,
+        "⏰*NOVO ATENDIMENTO HUMANO*\n\n" +
+        `Cliente: ${msg.from}\n` +
+        `Mensagem inicial: ${msg.body}\n` +
+        `Horário: ${new Date().toLocaleString()}`
+      );
+
+      return;
+    }
     // ==========================
     // 🏁 MENU INICIAL
     // ==========================
